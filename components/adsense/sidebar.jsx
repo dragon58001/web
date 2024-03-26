@@ -9,7 +9,7 @@ const AdSenseIklan = () => {
   }, []);
   return (
     <ins
-      className="m-2 border-2 lg:m-0 adsbygoogle"
+      className="m-2 lg:m-0 adsbygoogle"
       style={{ display: "block", width: "300px"}}
       data-ad-client="ca-pub-5738026098468973"
       data-ad-slot="1506991445"
