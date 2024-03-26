@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 import AdsSidebar from "../../components/adsense/sidebar";
 import AdsBot from "../../components/adsense/bot";
 import { useRouter } from "next/navigation";
-import Script from 'next/script'
 
 const PostPage = () => {
   const router = useRouter()
@@ -64,14 +63,7 @@ const PostPage = () => {
   }, []);
   
   return (
-    <div className="relative">
-      <div className="none lg:absolute min-h-full -right-80 w-[300px]">
-        <div className="sticky w-full mx-2 top-10">
-          <div>
-            <AdsSidebar />
-          </div>
-        </div>
-      </div>
+    <>
       <div className="my-3 text-center">
         <h1 className="text-2xl font-bold text-slate-800">Download Tiktok</h1>
         <p className="my-1 text-base text-slate-600">
@@ -165,7 +157,7 @@ const PostPage = () => {
           </ul>
         </div>
       </article>
-    </div>
+    </>
   );
 };
 
