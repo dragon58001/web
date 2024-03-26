@@ -1,20 +1,20 @@
 import * as React from "react";
-import config from "../../../components/config.json";
+// import config from "../../../components/config.json";
 import AdsSidebar from "../../../components/adsense/sidebar";
 import AdsBot from "../../../components/adsense/bot";
 import { redirect } from "next/navigation";
 
-export async function generateMetadata(props: any) {
-  const url = props.params.url;
+// export async function generateMetadata(props: any) {
+//   const url = props.params.url;
 
-  return {
-    title: "ok",
-    description: "ok",
-    alternates: {
-      canonical: config.url + url,
-    },
-  };
-}
+//   return {
+//     title: "ok",
+//     description: "ok",
+//     alternates: {
+//       canonical: config.url + url,
+//     },
+//   };
+// }
 
 const PostPage = async (props: any) => {
   const url = props.params.url;
@@ -29,9 +29,11 @@ const PostPage = async (props: any) => {
     }
   );
   const data = await response.json();
-  if (data.error || data.data.status === 400) redirect("/tiktok");
+  
+  if (data.error || data.code) redirect("/tiktok");
   const img = data.thumbnail;
   const dlink = Buffer.from(data.medias[0].url).toString("base64");
+  const size = data.medias[0].formattedSize
   return (
     <div className="relative">
       <div className="none lg:absolute min-h-full -right-80 w-[300px]">
@@ -58,13 +60,13 @@ const PostPage = async (props: any) => {
             href={`https://dl.muscdn.app/ZGwubXlwdXJ0ZWNoLmNvbQ==/hd/${dlink}`}
             className="px-4 py-2 text-white transition duration-150 ease-in-out bg-blue-500 rounded-md hover:bg-blue-600"
           >
-            Download Video{" "}
+            Download Video ({size})
           </a>
         </div>
         <div>
           <AdsBot />
         </div>
-        <div className="my-2">
+        <div className="my-2 prose">
           <h2 className="text-2xl">Download Mypurtech Tiktok</h2>
           <p>
             Download Mypurtech Tiktok adalah alat online yang membantu Anda
