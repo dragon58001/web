@@ -1,8 +1,9 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import AdsSidebar from "../../components/adsense/sidebar";
 import AdsBot from "../../components/adsense/bot";
 import { useRouter } from "next/navigation";
+import Script from 'next/script'
 
 const PostPage = () => {
   const router = useRouter()
@@ -11,6 +12,57 @@ const PostPage = () => {
       e.preventDefault()
       router.push("/tiktok/" + Buffer.from(route).toString("base64"))
   }
+
+  const videoUrlInputRef = useRef<HTMLInputElement>(null)
+  const pasteButtonRef = useRef<HTMLButtonElement>(null);
+  const clearButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const videoUrlInput = videoUrlInputRef.current;
+    const pasteButton = pasteButtonRef.current;
+    const clearButton = clearButtonRef.current;
+
+    if (videoUrlInput && pasteButton && clearButton) {
+      const handlePaste = () => {
+        navigator.clipboard.readText()
+          .then(text => {
+            videoUrlInput.value = text;
+            clearButton.classList.remove('hidden');
+            pasteButton.classList.add('hidden');
+          })
+          .catch(err => {
+            console.error('Gagal melakukan paste:', err);
+          });
+      };
+
+      const handleClear = () => {
+        videoUrlInput.value = '';
+        clearButton.classList.add('hidden');
+        pasteButton.classList.remove('hidden');
+      };
+
+      const handleInput = () => {
+        if (videoUrlInput.value.trim() !== '') {
+          clearButton.classList.remove('hidden');
+          pasteButton.classList.add('hidden');
+        } else {
+          clearButton.classList.add('hidden');
+          pasteButton.classList.remove('hidden');
+        }
+      };
+
+      pasteButton.addEventListener('click', handlePaste);
+      clearButton.addEventListener('click', handleClear);
+      videoUrlInput.addEventListener('input', handleInput);
+
+      return () => {
+        pasteButton.removeEventListener('click', handlePaste);
+        clearButton.removeEventListener('click', handleClear);
+        videoUrlInput.removeEventListener('input', handleInput);
+      };
+    }
+  }, []);
+  
   return (
     <div className="relative">
       <div className="none lg:absolute min-h-full -right-80 w-[300px]">
@@ -31,6 +83,7 @@ const PostPage = () => {
           <div className="mb-4">
             <input
               type="text"
+              ref={videoUrlInputRef}
               id="videoUrl"
               name="videoUrl"
               placeholder="URL Video TikTok"
@@ -48,6 +101,7 @@ const PostPage = () => {
             <button
               type="button"
               id="pasteButton"
+              ref={pasteButtonRef}
               className="px-4 py-2 text-white transition duration-150 ease-in-out bg-blue-500 rounded-md hover:bg-blue-600"
             >
               Paste
@@ -55,6 +109,7 @@ const PostPage = () => {
             <button
               type="button"
               id="clearButton"
+              ref={clearButtonRef}
               className="hidden px-4 py-2 text-white transition duration-150 ease-in-out bg-red-500 rounded-md hover:bg-red-600"
             >
               Hapus

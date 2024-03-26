@@ -1,15 +1,4 @@
-// import getPostMetadata from "../components/getPostMetadata";
-// import PostPreview from "../components/PostPreview";
-// import config from "../components/config.json";
-import { redirect } from "next/navigation";
-
 const HomePage = () => {
-  // redirect('/tiktok')
-  // const postMetadata = getPostMetadata();
-  // const postPreviews = postMetadata.slice(0, 10).map((post) => (
-  //   <PostPreview key={post.slug} {...post} />
-  // ));
-
   return (
     <>
     <h1 className="my-2 text-2xl font-bold text-center text-black">Download Video</h1>

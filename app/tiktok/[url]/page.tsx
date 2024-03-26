@@ -1,20 +1,7 @@
 import * as React from "react";
-// import config from "../../../components/config.json";
 import AdsSidebar from "../../../components/adsense/sidebar";
 import AdsBot from "../../../components/adsense/bot";
 import { redirect } from "next/navigation";
-
-// export async function generateMetadata(props: any) {
-//   const url = props.params.url;
-
-//   return {
-//     title: "ok",
-//     description: "ok",
-//     alternates: {
-//       canonical: config.url + url,
-//     },
-//   };
-// }
 
 const PostPage = async (props: any) => {
   const url = props.params.url;
