@@ -1,5 +1,5 @@
 import Tiktok from './tiktok'
-import config from "../../components/config.json";
+import config from "./config.json";
 
 export const metadata = {
   title: config.sitename,
