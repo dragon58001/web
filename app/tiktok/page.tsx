@@ -2,8 +2,8 @@ import Tiktok from './tiktok'
 import config from "../../components/config.json";
 
 export const metadata = {
-  title: "TikTok Downloader - Without Watermark Full HD",
-  description: "TikTok Downloader - Without Watermark Full HD",
+  title: config.sitename,
+  description: config.desc,
   canonical: config.url,
   openGraph: {
     url: config.url,
