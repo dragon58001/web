@@ -1,5 +1,5 @@
 import * as React from "react";
-import AdsSidebar from "../../../components/adsense/sidebar";
+// import AdsSidebar from "../../../components/adsense/sidebar";
 import AdsBot from "../../../components/adsense/bot";
 import { redirect } from "next/navigation";
 
@@ -23,13 +23,13 @@ const PostPage = async (props: any) => {
   const size = data.medias[0].formattedSize
   return (
     <div className="relative">
-      <div className="none lg:absolute min-h-full -right-80 w-[300px]">
+      {/* <div className="none lg:absolute min-h-full -right-80 w-[300px]">
         <div className="sticky w-full mx-2 top-10">
           <div>
             <AdsSidebar />
           </div>
         </div>
-      </div>
+      </div> */}
       <article className="">
         <div className="flex flex-col items-center gap-3">
           <img
