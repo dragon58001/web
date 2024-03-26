@@ -1,7 +1,7 @@
 const Head = (title:any) => {
   return (
     <>
-<title>a</title>
+<title>ok</title>
 <meta name="description" content="Blog Tutorial yang membahas hal yang baru dan viral. Blog MyPurTech" />
 
 <meta property="og:url" content="https://blog.mypurtech.com" />
