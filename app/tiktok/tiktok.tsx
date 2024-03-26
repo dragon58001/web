@@ -5,12 +5,12 @@ import AdsBot from "../../components/adsense/bot";
 import { useRouter } from "next/navigation";
 
 const PostPage = () => {
-    const router = useRouter()
-    const [route, setRoute] = useState("")
-    const handleSubmit = (e:any) => {
-        e.preventDefault()
-        router.push("/tiktok/" + Buffer.from(route).toString("base64"))
-    }
+  const router = useRouter()
+  const [route, setRoute] = useState("")
+  const handleSubmit = (e:any) => {
+      e.preventDefault()
+      router.push("/tiktok/" + Buffer.from(route).toString("base64"))
+  }
   return (
     <div className="relative">
       <div className="none lg:absolute min-h-full -right-80 w-[300px]">
