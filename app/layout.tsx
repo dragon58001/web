@@ -38,7 +38,7 @@ const footer = (
       <head>
         <Script
           id="adsbygoogle-init"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           crossOrigin="anonymous"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5738026098468973"
         />
