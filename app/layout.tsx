@@ -28,7 +28,7 @@ export default function RootLayout({
 
   const footer = (
     <footer>
-      <div className="py-6 mt-12 text-center border-t border-slate-400 text-slate-400">
+      <div className="py-6 mt-12 text-center border-t border-slate-400 text-slate-700">
         <h3>{config.sitename}</h3>
       </div>
     </footer>

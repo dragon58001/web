@@ -86,7 +86,7 @@ const PostPage = () => {
           <div className="flex justify-center gap-3">
             <button
               type="submit"
-              className="px-4 py-2 text-white transition duration-150 ease-in-out bg-green-500 rounded-md hover:bg-green-600"
+              className="px-4 py-2 text-white transition duration-150 ease-in-out bg-green-700 rounded-md hover:bg-green-600"
             >
               Download
             </button>
@@ -94,7 +94,7 @@ const PostPage = () => {
               type="button"
               id="pasteButton"
               ref={pasteButtonRef}
-              className="px-4 py-2 text-white transition duration-150 ease-in-out bg-blue-500 rounded-md hover:bg-blue-600"
+              className="px-4 py-2 text-white transition duration-150 ease-in-out bg-blue-700 rounded-md hover:bg-blue-600"
             >
               Paste
             </button>
@@ -102,7 +102,7 @@ const PostPage = () => {
               type="button"
               id="clearButton"
               ref={clearButtonRef}
-              className="hidden px-4 py-2 text-white transition duration-150 ease-in-out bg-red-500 rounded-md hover:bg-red-600"
+              className="hidden px-4 py-2 text-white transition duration-150 ease-in-out bg-red-700 rounded-md hover:bg-red-600"
             >
               Hapus
             </button>
