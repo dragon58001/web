@@ -43,7 +43,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5738026098468973"
         />
-        <GoogleAnalytics GA_TRACKING_ID="G-JRBC9V68YF" />
+        {/* <GoogleAnalytics GA_TRACKING_ID="G-JRBC9V68YF" /> */}
       </head>
       <body>
         <div className="relative max-w-2xl px-6 mx-auto">
