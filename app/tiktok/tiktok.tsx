@@ -111,7 +111,7 @@ const PostPage = () => {
         <div>
           <AdsBot />
         </div>
-        <div className="my-2">
+        <div className="my-4">
           <h2 className="text-2xl">Download Mypurtech Tiktok</h2>
           <p>
             Download Mypurtech Tiktok adalah alat online yang membantu Anda

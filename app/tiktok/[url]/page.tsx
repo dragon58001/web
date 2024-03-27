@@ -53,7 +53,7 @@ const PostPage = async (props: any) => {
         <div>
           <AdsBot />
         </div>
-        <div className="my-2 prose">
+        <div className="my-4 prose">
           <h2 className="text-2xl">Download Mypurtech Tiktok</h2>
           <p>
             Download Mypurtech Tiktok adalah alat online yang membantu Anda
