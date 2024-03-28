@@ -2,14 +2,13 @@
 import { useEffect, useRef, useState } from 'react'
 import AdsSidebar from "../../components/adsense/sidebar";
 import AdsBot from "../../components/adsense/bot";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 const PostPage = () => {
-  const router = useRouter()
+  // const router = useRouter()
   const [route, setRoute] = useState("")
-  const handleSubmit = (e:any) => {
-      e.preventDefault()
-      router.push("/tiktok/" + Buffer.from(route).toString("base64"))
+  const handleSubmit = () => {
+      window.location.href = "/tiktok/" + Buffer.from(route).toString("base64")
   }
 
   const videoUrlInputRef = useRef<HTMLInputElement>(null)
@@ -67,11 +66,11 @@ const PostPage = () => {
       <div className="my-3 text-center">
         <h1 className="text-2xl font-bold text-slate-800">Download Tiktok</h1>
         <p className="my-1 text-base text-slate-600">
-          TikTok Downloader Tanpa Watermark HD
+          TikTok Downloader Without Watermark HD
         </p>
       </div>
       <article className="prose">
-        <form id="submit-form" onSubmit={handleSubmit}>
+        {/* <form id="submit-form" onSubmit={handleSubmit}> */}
           <div className="mb-4">
             <input
               type="text"
@@ -86,6 +85,7 @@ const PostPage = () => {
           <div className="flex justify-center gap-3">
             <button
               type="submit"
+              onClick={handleSubmit}
               className="px-4 py-2 text-white transition duration-150 ease-in-out bg-green-700 rounded-md hover:bg-green-600"
             >
               Download
@@ -107,7 +107,7 @@ const PostPage = () => {
               Hapus
             </button>
           </div>
-        </form>
+        {/* </form> */}
         <div>
           <AdsBot />
         </div>
