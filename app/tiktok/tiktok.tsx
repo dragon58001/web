@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import AdsSidebar from "../../components/adsense/sidebar";
+// import AdsSidebar from "../../components/adsense/sidebar";
 import AdsBot from "../../components/adsense/bot";
-import { redirect, useRouter } from "next/navigation";
+// import { redirect, useRouter } from "next/navigation";
 
 const PostPage = () => {
   // const router = useRouter()
@@ -70,7 +70,6 @@ const PostPage = () => {
         </p>
       </div>
       <article className="prose">
-        {/* <form id="submit-form" onSubmit={handleSubmit}> */}
           <div className="mb-4">
             <input
               type="text"
@@ -107,7 +106,6 @@ const PostPage = () => {
               Hapus
             </button>
           </div>
-        {/* </form> */}
         <div>
           <AdsBot />
         </div>
@@ -124,8 +122,7 @@ const PostPage = () => {
           <ul className="px-4 list-disc">
             <li>
               <p>
-                Buka aplikasi <strong>TikTok</strong> /{" "}
-                <strong>TikTok Lite</strong> di HP kamu.
+                Buka aplikasi <strong>TikTok</strong> / <strong>TikTok Lite</strong> di HP kamu.
               </p>
             </li>
             <li>
@@ -150,8 +147,7 @@ const PostPage = () => {
             </li>
             <li>
               <p>
-                Tunggu beberapa saat lalu klik tombol{" "}
-                <strong>Download Video</strong>.
+                Tunggu beberapa saat lalu klik tombol <strong>Download Video</strong>.
               </p>
             </li>
           </ul>

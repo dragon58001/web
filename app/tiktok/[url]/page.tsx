@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 const PostPage = async (props: any) => {
   const url = props.params.url;
   const response = await fetch(
-    `https://snapdouyin.app/wp-json/aio-dl/video-data/`,
+    `https://snaptiktok.me/wp-json/aio-dl/video-data/`,
     {
       method: "POST",
       headers: {
@@ -21,6 +21,8 @@ const PostPage = async (props: any) => {
   const img = data.thumbnail;
   const dlink = Buffer.from(data.medias[0].url).toString("base64");
   const size = data.medias[0].formattedSize
+  const dlink1 = data.medias[3].url
+  const size1 = data.medias[3].formattedSize
   return (
     <div className="relative">
       {/* <div className="none lg:absolute min-h-full -right-80 w-[300px]">
@@ -42,6 +44,12 @@ const PostPage = async (props: any) => {
             className="px-4 py-2 text-white transition duration-150 ease-in-out bg-blue-500 rounded-md hover:bg-blue-600"
           >
             Download Another Video
+          </a>
+          <a
+            href={dlink1}
+            className="px-4 py-2 text-white transition duration-150 ease-in-out bg-blue-500 rounded-md hover:bg-blue-600"
+          >
+            Download Mp3 ({size1})
           </a>
           <a
             href={`https://dl.muscdn.app/ZGwubXlwdXJ0ZWNoLmNvbQ==/hd/${dlink}`}
@@ -92,8 +100,7 @@ const PostPage = async (props: any) => {
             </li>
             <li>
               <p>
-                Tunggu beberapa saat lalu klik tombol{" "}
-                <strong>Download Video</strong>.
+                Tunggu beberapa saat lalu klik tombol <strong>Download Video</strong>.
               </p>
             </li>
           </ul>
