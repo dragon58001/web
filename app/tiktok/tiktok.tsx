@@ -8,7 +8,7 @@ const PostPage = () => {
   // const router = useRouter()
   const [route, setRoute] = useState("")
   const handleSubmit = () => {
-      window.location.href = "/tiktok/" + Buffer.from(route).toString("base64")
+      window.location.href = "/tiktok/" + Buffer.from(route.split("?")[0]+"/").toString("base64")
   }
 
   const videoUrlInputRef = useRef<HTMLInputElement>(null)
