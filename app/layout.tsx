@@ -20,7 +20,7 @@ export default function RootLayout({
     <header>
       <div className="p-4 my-6 text-center rounded-md bg-slate-800">
         <Link href="/">
-          <div className="text-2xl font-bold text-white">{config.sitename}</div>
+          <div className="text-2xl font-bold text-white">{config.sitename.replace("Download ",'')}</div>
         </Link>
       </div>
     </header>
